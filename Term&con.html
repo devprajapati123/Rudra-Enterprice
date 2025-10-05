@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Warriors — Category</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{
+      --primary: #000000;
+      --muted:#6c757d;
+      --max-w:1200px;
+      --radius:12px;
+    }
+
+    /* Page container with left/right margins */
+    .page-wrap{
+      max-width: var(--max-w);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    /* Header */
+    header.site-header{
+      background: #2d89ef;
+      border-bottom: 1px solid #eee;
+    }
+    .brand { font-weight:700; color:var(--primary); font-size:1.25rem; }
+
+    /* Hero */
+    .hero img{ width:100%; height:360px; object-fit:cover; border-radius:8px; }
+
+    /* Theme */
+    .btn-primary { background:var(--primary); border-color:var(--primary); }
+    .text-primary { color: var(--primary) !important; }
+
+    /* Product cards */
+    .product-card{ border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); overflow:hidden; background:#fff; }
+    .product-card .card-body{ padding:0.9rem; }
+    .product-image{ height:300px; object-fit:contain; width:100%; display:block; }
+
+    /* Quantity control */
+    .qty-input{ width:70px; display:inline-flex; align-items:center; justify-content:space-between; border:1px solid #e9ecef; border-radius:8px; padding:4px 6px; }
+    .qty-input button{ border:0; background:transparent; font-weight:700; padding:0 6px; cursor:pointer; }
+    .qty-input input{ width:36px; text-align:center; border:0; outline:0; }
+
+    /* New products box style border */
+    .new-card{ border:1px solid #e9ecef; border-radius:10px; padding:12px; background:#fff; }
+
+    /* Cart offcanvas custom width */
+    .offcanvas-cart { --bs-offcanvas-width:400px; }
+
+    /* Footer */
+    footer.site-footer{ background:#2d89ef; color:#fff; padding:24px 0; margin-top:32px; }
+    .social img{height:36px; border-radius:50%; object-fit:cover; margin-left:8px;gap:5px;}
+
+    /* Responsive tweaks */
+    @media (max-width:576px){
+      .hero img{ height:200px; }
+      .qty-input{ width:90px; }
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Header (static) -->
+  <header class="site-header">
+    <div class="page-wrap d-flex align-items-center justify-content-between py-3">
+      <div class="d-flex align-items-center gap-3">
+       <a href="index.html"><div class="brand">📱 Rudra Enterprise</div></a>
+        <!-- Simple full-width menu (links) -->
+        <nav class="d-none d-md-block">
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link text-dark" href="#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#trending">Trending</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#new">New</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Actions -->
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">Menu</button>
+
+        <!-- Cart icon -->
+        <button id="openCart" class="btn cart-btn position-relative btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Open cart">
+          🛒
+          <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark text-white">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 id="mobileMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a href="#features" class="d-block py-2">Features</a></li>
+        <li><a href="#trending" class="d-block py-2">Trending</a></li>
+        <li><a href="#new" class="d-block py-2">New</a></li>
+        <li><a href="#about" class="d-block py-2">About</a></li>
+        <li><a href="#contact" class="d-block py-2">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero (full width inside container) -->
+  <main class="page-wrap py-4">
+    <section class="hero mb-4">
+      <img src="imeges/hero.jpg" alt="Hero image" class="w-100 rounded">
+    </section>
+
+
+
+    <!-- About Us -->
+    <section id="about" class="mb-5">
+      <h2 class="mb-3">Privacy Policy</h2>
+      <div class="card p-3">
+        <h1>Terms and Conditions</h1>
+    <p><b>Company — Terms & Conditions</b><br><br><br>
+    Last updated: Effective Date: Upon publication<br><br>
+    
+
+Please read these terms and conditions ("Terms") carefully before using the services provided by the Company. These Terms govern your access to and use of the website, products and services. <br><br>
+
+<b>Agreement to Terms</b><br>
+------------------<br>
+By accessing and using the services provided by Company, you agree to be bound by these Terms. If you do not agree, do not use the services. <br><br>
+
+<b>User Obligations</b><br>
+----------------<br>
+You agree to use the services only for lawful purposes and comply with all applicable laws. You will not misuse or interfere with the service, attempt to access unauthorized areas, or perform activities that harm the service or other users.
+You are responsible for maintaining the confidentiality of your account credentials and for any activity that occurs under your account.<br><br>
+
+<b>Intellectual Property</b><br>
+---------------------<br>
+All content, trademarks, logos, and other intellectual property displayed on or through the service are the property of Company or its licensors. You may not copy, reproduce, or create derivative works without prior written consent.<br><br>
+
+<b>Privacy</b><br>
+-------<br>
+We process personal information in accordance with our Privacy Policy. Please review the Privacy Policy for details about how we collect, use, and disclose personal data.<br><br>
+
+<b>Limitation of Liability</b><br>
+-----------------------<br>
+To the maximum extent permitted by applicable law, Company and its affiliates shall not be liable for indirect, incidental, special, or consequential damages arising out of or in connection with the use of the service.
+Some jurisdictions do not allow the exclusion of certain warranties; therefore some of the above limitations may not apply to you.<br><br>
+
+<b>Changes to Terms</b><br>
+----------------<br>
+We may revise these Terms from time to time. Continued use of the service after changes indicates acceptance of the new Terms.<br><br>
+
+<b>Contact</b><br>
+-------<br>
+If you have questions or concerns about these Terms, contact us at: <a href="#">devprajapati704@gmail.com.</a><br><br>
+
+---<br>
+</p>
+  </main>
+
+  <!-- Cart Offcanvas (Bootstrap offcanvas) -->
+  <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 id="cartOffcanvasLabel">Your Cart</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cartItemsList" class="mb-3"></div>
+
+      <div class="mt-auto">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <strong>Total</strong>
+          <strong id="cartTotal">₹0</strong>
+        </div>
+        <div class="d-flex gap-2">
+          <button id="checkoutBtn" class="btn btn-primary w-100">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+        
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between color-white">
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="Term&con.html"> <h6 style="color: white;"> Terms & Conditions</h6></a></li>
+          <li><a href="privacy-policy.html"><h6 style="color: white;">Privacy Policy</h6></a></li>
+          <li><a href="refund.html"><h6 style="color: white;">Refund Policy</h6></a></li>
+        </ul>
+        <strong class="text-white">Rudra Enterprice</strong>
+        <div class="text-muted small"><span id="year"></span> Rudra Enterprice © All rights reserved.</div>
+      </div>
+
+      <div class="social d-flex align-items-center background-color-white ">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+        <!--<a href="#"><img src="https://via.placeholder.com/36" alt="instagram"></a>-->
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast for feedback -->
+  <div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index:1080">
+    <div id="siteToast" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div id="siteToastBody" class="toast-body">Added to cart</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Simple cart implementation
+    const cart = { items: [] }; // { id, name, price, qty, img }
+    const toastEl = document.getElementById('siteToast');
+    const toast = new bootstrap.Toast(toastEl, { delay: 1600 });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Utility: show toast message
+    function showToast(message) {
+      document.getElementById('siteToastBody').textContent = message;
+      toast.show();
+    }
+
+    // Find product card root given a button inside it
+    function findProductCard(el){
+      return el.closest('.product-card') || el.closest('.new-card');
+    }
+
+    // Get product data from card (id, name, price, image)
+    function readProductData(card){
+      // create an id if not present, using name + price
+      const title = card.querySelector('.card-title')?.textContent?.trim() ||
+                    card.querySelector('h5')?.textContent?.trim() || 'Product';
+      const priceText = card.querySelector('.fs-6')?.textContent || card.querySelector('strong')?.textContent || '';
+      const price = parseInt((priceText+'').replace(/[₹,\s]/g,'')) || 0;
+      const img = card.querySelector('img')?.src || 'https://via.placeholder.com/400x300';
+      const id = (title + '-' + price).replace(/\s+/g,'-').toLowerCase();
+      return { id, name: title, price, img };
+    }
+
+    // Quantity controls (increase / decrease) across all qty-input components
+    document.querySelectorAll('[data-product-qty]').forEach(qWrap => {
+      const input = qWrap.querySelector('input[type="number"]');
+      qWrap.querySelector('.qty-increase')?.addEventListener('click', () => {
+        input.value = Math.max(1, parseInt(input.value || '1') + 1);
+      });
+      qWrap.querySelector('.qty-decrease')?.addEventListener('click', () => {
+        input.value = Math.max(1, parseInt(input.value || '1') - 1);
+      });
+      // prevent manual zero/negative
+      input.addEventListener('change', () => {
+        if (!input.value || parseInt(input.value) < 1) input.value = 1;
+      });
+    });
+
+    // Add To Cart handler (works for both product-card and new-card)
+    document.body.addEventListener('click', function(e){
+      if (e.target.matches('[data-add]')) {
+        const card = findProductCard(e.target);
+        if (!card) return;
+        const qtyWrapper = card.querySelector('[data-product-qty] input[type="number"]');
+        const qty = qtyWrapper ? Math.max(1, parseInt(qtyWrapper.value || '1')) : 1;
+        const pd = readProductData(card);
+        addToCart({...pd, qty});
+        showToast(`${pd.name} (${qty}) added to cart`);
+      }
+      if (e.target.matches('[data-buy]')) {
+        const card = findProductCard(e.target);
+        if (!card) return;
+        const qtyWrapper = card.querySelector('[data-product-qty] input[type="number"]');
+        const qty = qtyWrapper ? Math.max(1, parseInt(qtyWrapper.value || '1')) : 1;
+        const pd = readProductData(card);
+        // Add to cart and open cart offcanvas
+        addToCart({...pd, qty});
+        showToast(`Proceed to buy ${pd.name}`);
+        const cartOff = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('cartOffcanvas'));
+        cartOff.show();
+      }
+    });
+
+    // Add to cart function (merges quantities)
+    function addToCart(item){
+      const found = cart.items.find(i => i.id === item.id);
+      if (found) found.qty += item.qty;
+      else cart.items.push({...item});
+      updateCartUI();
+    }
+
+    // Update cart UI and totals
+    function updateCartUI(){
+      const list = document.getElementById('cartItemsList');
+      list.innerHTML = '';
+      let total = 0;
+      cart.items.forEach(it => {
+        total += it.price * it.qty;
+        const row = document.createElement('div');
+        row.className = 'd-flex align-items-center gap-2 mb-3';
+        row.innerHTML = `
+          <img src="${it.img}" alt="${it.name}" width="64" height="64" style="object-fit:cover;border-radius:8px;">
+          <div class="flex-grow-1">
+            <div class="fw-semibold">${it.name}</div>
+            <div class="text-muted small">₹${it.price} × ${it.qty}</div>
+            <div class="mt-2 d-flex gap-1">
+              <button class="btn btn-sm btn-outline-secondary cart-q-decrease" data-id="${it.id}">−</button>
+              <span class="px-2">${it.qty}</span>
+              <button class="btn btn-sm btn-outline-secondary cart-q-increase" data-id="${it.id}">+</button>
+              <button class="btn btn-sm btn-danger ms-2 cart-remove" data-id="${it.id}">Remove</button>
+            </div>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+      document.getElementById('cartTotal').textContent = '₹' + total;
+      document.getElementById('cartCount').textContent = cart.items.reduce((s,i)=>s+i.qty,0);
+
+      // If cart empty, show placeholder
+      if (cart.items.length === 0) {
+        list.innerHTML = '<div class="text-muted small">Your cart is empty.</div>';
+      }
+    }
+
+    // Offcanvas event: when hidden, still keep data. You can hook if you want to clear.
+    updateCartUI();
+
+    // Cart quantity increase/decrease and remove events (delegation)
+    document.getElementById('cartItemsList').addEventListener('click', function(e){
+      const id = e.target.dataset.id;
+      if (!id) return;
+      const idx = cart.items.findIndex(x => x.id === id);
+      if (idx === -1) return;
+      if (e.target.classList.contains('cart-q-increase')) {
+        cart.items[idx].qty += 1;
+      } else if (e.target.classList.contains('cart-q-decrease')) {
+        cart.items[idx].qty = Math.max(1, cart.items[idx].qty - 1);
+      } else if (e.target.classList.contains('cart-remove')) {
+        cart.items.splice(idx, 1);
+      }
+      updateCartUI();
+    });
+
+    // Simple checkout (demo) - clicking Checkout will show simple confirm
+    document.getElementById('checkoutBtn').addEventListener('click', function(){
+      if (cart.items.length === 0) {
+        showToast('Your cart is empty.');
+        return;
+      }
+      // For demo: prompt for name (in real site redirect to checkout page)
+      const name = prompt('Enter your name for order (demo):');
+      if (!name) { showToast('Checkout cancelled'); return; }
+      // "Place order" demo: empty cart and show thank you
+      const total = cart.items.reduce((s,i)=>s+i.price*i.qty,0);
+      cart.items = [];
+      updateCartUI();
+      const cartOff = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('cartOffcanvas'));
+      cartOff.hide();
+      showToast(`Thanks ${name}! Order placed. Total ₹${total}`);
+    });
+
+    // Contact form submit
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      showToast('Thank you — message received.');
+      e.target.reset();
+    });
+
+    // Accessibility: ensure data attributes are present on dynamic areas (already used)
+    // End of script
+  </script>
+</body>
+</html>
